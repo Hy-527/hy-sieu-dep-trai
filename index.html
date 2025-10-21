@@ -706,6 +706,24 @@
           text-align: center;
         }
       }
+
+      /* ===== Sticky footer layout (THÊM MỚI) ===== */
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      @supports (height: 100svh) {
+        body {
+          min-height: 100svh;
+        }
+      }
+      main {
+        flex: 1 0 auto; /* chiếm khoảng trống để đẩy footer xuống đáy khi nội dung ngắn */
+      }
+      footer {
+        margin-top: auto; /* ép footer bám đáy */
+      }
     </style>
   </head>
   <body class="grain">
@@ -776,7 +794,7 @@
             alt="avatar"
           />
         </div>
-        <div class="nick" id="nick">Hy Siêu Đẹp Trai</div>
+        <div class="nick" id="nick">Hy</div>
         <div class="tagline">Ky uc khong nam tren ban do</div>
         <div class="socials" aria-label="social links">
           <a href="https://www.tiktok.com/@antichocolatee_?" aria-label="Tiktok"
